@@ -3,8 +3,6 @@ services:
   app:
     build:
       context: ./docker/php
-      args:
-        - TZ=${TZ}
     volumes:
       - ./src:/work
       - ./logs:/var/log/php
@@ -16,13 +14,12 @@ services:
       - DB_DATABASE=${DB_NAME}
       - DB_USERNAME=${DB_USER}
       - DB_PASSWORD=${DB_PASS}
-      - TZ=${TZ}
   web:
     image: nginx:1.17-alpine
     depends_on:
       - app
     ports:
-      - 10080:80
+      - 4000:80
     volumes:
       - ./src:/work
       - ./logs:/var/log/nginx
