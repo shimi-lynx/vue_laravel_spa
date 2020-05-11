@@ -1,3 +1,5 @@
 /dblog
 /logs
 .env
+my.sh
+phptest.sh
