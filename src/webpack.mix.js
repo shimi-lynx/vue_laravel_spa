@@ -1,15 +1,19 @@
-const mix = require('laravel-mix');
-
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+const mix = require('laravel-mix')
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .version()
+    .browserSync({
+        proxy: {
+            target: 'web', //nginxのコンテナサービス名と一致させる
+        },
+        files: [
+            './resources/**/*',
+            './app/**/*',
+            './config/**/*',
+            './routes/**/*',
+            './public/**/*',
+        ],
+        open: false,
+        reloadOnRestart: true,
+    });
