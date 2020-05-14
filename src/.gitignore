@@ -12,8 +12,8 @@ npm-debug.log
 yarn-error.log
 
 ### Laravel Mix ##########################
-src/public/css/app.css
-src/public/js/app.js
-src/public/js/manifest.js
-src/public/js/vendor.js
-src/public/mix-manifest.json
+public/css/app.css
+public/js/app.js
+public/js/manifest.js
+public/js/vendor.js
+public/mix-manifest.json
