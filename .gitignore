@@ -3,3 +3,4 @@
 .env
 my.sh
 phptest.sh
+npmRunWatch.sh
