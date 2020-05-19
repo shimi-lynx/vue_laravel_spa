@@ -17,3 +17,6 @@ yarn-error.log
 /public/js/manifest.js
 /public/js/vendor.js
 /public/mix-manifest.json
+
+### phpunit test 用 ##########################
+config/database.php.test
