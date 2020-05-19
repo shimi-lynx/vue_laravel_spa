@@ -43,36 +43,36 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       tab: 1,
       loginForm: {
-        email: '',
-        password: ''
+        email: "",
+        password: ""
       },
       registerForm: {
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: ''
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: ""
       }
-    }
+    };
   },
   methods: {
-    async login () {
+    async login() {
       // authストアのloginアクションを呼び出す
-      await this.$store.dispatch('auth/login', this.loginForm)
+      await this.$store.dispatch("auth/login", this.loginForm);
 
       // トップページに移動する
-      this.$router.push('/')
+      this.$router.push("/");
     },
-    async register () {
+    async register() {
       // authストアのresigterアクションを呼び出す
-      await this.$store.dispatch('auth/register', this.registerForm)
+      await this.$store.dispatch("auth/register", this.registerForm);
 
       // トップページに移動する
-      this.$router.push('/')
+      this.$router.push("/");
     }
   }
-}
+};
 </script>
