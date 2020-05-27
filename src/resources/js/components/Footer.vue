@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
+
 export default {
   methods: {
     async logout() {
@@ -19,9 +21,12 @@ export default {
     }
   },
   computed: {
-    isLogin() {
-      return this.$store.getters["auth/check"];
-    }
+    ...mapState({
+      apiStatus: state => state.auth.apiStatus
+    }),
+    ...mapGetters({
+      isLogin: "auth/check"
+    })
   }
 };
 </script>

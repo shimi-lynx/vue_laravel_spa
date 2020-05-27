@@ -6,6 +6,9 @@ import PhotoList from './pages/PhotoList.vue'
 import Login from './pages/Login.vue'
 
 import store from './store'
+// エラーページを表すコンポーネントのインポート
+import SystemError from './pages/errors/System.vue'
+
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
 Vue.use(VueRouter)
@@ -26,6 +29,10 @@ const routes = [
         next()
       }
     },
+  },
+  {
+    path: '/500',
+    component: SystemError,
   },
 ]
 
